@@ -1,90 +1,84 @@
-import { useState, type FormEvent, type ChangeEvent } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import { useState, FormEvent, ChangeEvent } from "react";
+import './login.css'
+import Auth from "../utils/auth"; // Import the Auth utility for managing authentication state
+import { login } from "../api/authAPI"; // Import the login function from the API
+import { UserLogin } from "../interfaces/UserLogin"; // Import the interface for UserLogin
 
-import Auth from '../utils/auth';
 
 const Login = () => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  // State to manage the login form data
+  const [loginData, setLoginData] = useState<UserLogin>({
+    email: "",
+    password: "",
+  });
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-
-    setFormState({
-      ...formState,
+  // Handle changes in the input fields
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setLoginData({
+      ...loginData,
       [name]: value,
     });
   };
 
-  const handleFormSubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    console.log(formState);
+  // Handle form submission for login
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
     try {
-      const { data } = await login({
-        variables: { ...formState },
-      });
-
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
+      // Call the login API endpoint with loginData
+      
+      const data = await login(loginData);
+      
+      console.log(data)
+      // If login is successful, call Auth.login to store the token in localStorage
+      
+      Auth.login(data.token);
+      console.log('dataToken', data.token)
+      localStorage.setItem('authToken', data.token)
+    } catch (err) {
+      // alert("Failed to login"); // Log any errors that occur during login
     }
-
-    setFormState({
-      email: '',
-      password: '',
-    });
+    window.location.assign('/categories')
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
-          </div>
+    
+    <div className="form-container">
+      <form className="form login-form" onSubmit={handleSubmit}>
+        <h1>Welcome</h1>
+        {/* Username input field */}
+        <div className="form-group">
+          <label>Email</label>
+          <input
+            className="form-input in"
+            type="text"
+            name="email"
+            value={loginData.email || ""}
+            onChange={handleChange}
+          />
         </div>
-      </div>
-    </main>
+        {/* Password input field */}
+        <div className="form-group">
+          <label>Password</label>
+          <input
+            className="form-input in"
+            type="password"
+            name="password"
+            value={loginData.password || ""}
+            onChange={handleChange}
+          />
+        </div>
+        {/* Submit button for the login form */}
+        <div className="form-group btn-div">
+          <button onClick={handleSubmit} className="btn btn-primary" type="submit">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+    
   );
 };
 

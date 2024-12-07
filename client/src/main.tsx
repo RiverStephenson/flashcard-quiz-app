@@ -1,11 +1,14 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Categories from './pages/Categories.js';
+import Flashcards from './pages/Flashcards.js';
+import Quiz from './pages/Quiz.js';
 
 
 import App from './App.jsx';
-// import Home from './pages/Home';
 
-// import Login from './pages/Login';
+import ErrorPage from './pages/ErrorPage.js';
+import Login from './pages/Login';
 
 
 const router = createBrowserRouter([
@@ -14,13 +17,22 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      // {
-      //   index: true,
-      //   element: <Home />
-      // }, {
-      //   path: '/login',
-      //   element: <Login />
-      // },
+      {
+        index: true,
+        element: <Login />
+      },
+       {
+        path: '/categories',
+        element: <Categories />
+       },
+       {
+        path: '/flashcards',
+        element: <Flashcards />
+       },
+       {
+        path: '/quiz',
+        element: <Quiz />
+       },
     ]
   },
 ]);
