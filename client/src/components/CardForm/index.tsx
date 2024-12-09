@@ -62,44 +62,40 @@ const CardForm = () => {
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
             <form
-        className="flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
       >
-           <div className="col-12">
+           <div>
           <textarea
-            name="thoughtText"
+            name="category"
             placeholder="What's the category you want to have?..."
             value={formState.category}
-            className="form-input w-100"
             onChange={handleChange}
           />
         </div>
-        <div className="col-12">
+        <div>
           <textarea
-            name="thoughtText"
+            name="questionText"
             placeholder="Add your question here please..."
             value={formState.questionText}
-            className="form-input w-100"
             onChange={handleChange}
           />
         </div>
-        <div className="col-12 col-lg-9">
+        <div >
           <input
-            name="thoughtAuthor"
+            name="answerText"
             placeholder="Add your answer here please..."
             value={formState.answerText}
-            className="form-input w-100"
             onChange={handleChange}
           />
         </div>
 
-        <div className="col-12 col-lg-3">
-          <button className="btn btn-primary btn-block py-3" type="submit">
+        <div>
+          <button>
             Add Card
           </button>
         </div>
         {error && (
-          <div className="col-12 my-3 bg-danger text-white p-3">
+          <div >
             Something went wrong...
           </div>
         )}

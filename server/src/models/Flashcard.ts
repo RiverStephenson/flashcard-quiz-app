@@ -6,7 +6,6 @@ interface ICard extends Document {
   category: string;
   questionText: string;
   answerText: string;
-  createdAt: Date;
 }
 
 // Define the schema for the Thought document

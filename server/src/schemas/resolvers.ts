@@ -38,10 +38,10 @@ const resolvers = {
     user: async (_parent: any, { email }: UserArgs) => {
       return User.findOne({ email });
     },
-    thoughts: async () => {
+    cards: async () => {
       return await Card.find().sort({ createdAt: -1 });
     },
-    thought: async (_parent: any, { cardId }: CardArgs) => {
+    card: async (_parent: any, { cardId }: CardArgs) => {
       return await Card.findOne({ _id: cardId });
     },
     // Query to get the authenticated user's information
@@ -92,19 +92,19 @@ const resolvers = {
     },
     addCard: async (_parent: any, { input }: AddCardArgs, context: any) => {
       if (context.user) {
-        const thought = await Card.create({ ...input });
+        const card = await Card.create({ ...input });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { thoughts: thought._id } }
+          { $addToSet: { cards: card._id } }
         );
 
-        return thought;
+        return card;
       }
       throw AuthenticationError;
       ('You need to be logged in!');
     },
-    removeThought: async (_parent: unknown, { cardId }: CardArgs) => {
+    removeCard: async (_parent: unknown, { cardId }: CardArgs) => {
       return await Card.findOneAndDelete({ _id: cardId });
     },
   },

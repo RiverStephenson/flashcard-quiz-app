@@ -6,10 +6,9 @@ export const QUERY_CARDS = gql`
   query getCards {
     cards {
         _id
-        category: string;
-        questionText: string;
-        answerText: string;
-        createdAt: Date;
+        category 
+        questionText
+        answerText
     }
   }
 `;
@@ -19,10 +18,9 @@ export const QUERY_SINGLE_CARD = gql`
   query getSingleCard($cardId: ID!) {
     card(cardId: $cardId) {
         _id
-        category: string;
-        questionText: string;
-        answerText: string;
-        createdAt: Date;
+        category
+        questionText
+        answerText
     }
   }
 `;
