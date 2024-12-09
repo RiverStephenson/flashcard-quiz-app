@@ -1,6 +1,6 @@
 
 
-  import { useState, type FormEvent, type ChangeEvent } from 'react';
+import { useState, type FormEvent, type ChangeEvent } from 'react';
 // import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
@@ -27,7 +27,7 @@ const Login = () => {
       const { data } = await login({
         variables: { ...formState },
       });
-
+      console.log(data)
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
@@ -38,13 +38,13 @@ const Login = () => {
       password: '',
     });
 
-    window.location.assign('/categories')
+    // window.location.assign('/categories')
   };
 
-  
+
 
   return (
-    
+
     <div className="form-container">
       <form className="form login-form" onSubmit={handleSubmit}>
         <h1>Welcome</h1>
@@ -78,12 +78,12 @@ const Login = () => {
         </div>
       </form>
       {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+        <div className="my-3 p-3 bg-danger text-white">
+          {error.message}
+        </div>
+      )}
     </div>
-    
+
   );
 };
 
