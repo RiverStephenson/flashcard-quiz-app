@@ -5,7 +5,7 @@ import { gql } from '@apollo/client';
 export const QUERY_CARDS = gql`
   query getCards {
     cards {
-        _id
+    _id
         category 
         questionText
         answerText
@@ -17,7 +17,6 @@ export const QUERY_CARDS = gql`
 export const QUERY_SINGLE_CARD = gql`
   query getSingleCard($cardId: ID!) {
     card(cardId: $cardId) {
-        _id
         category
         questionText
         answerText

@@ -1,13 +1,13 @@
 const typeDefs = `
   type User {
     _id: ID
-    username: String
     email: String
     password: String
     cards: [Card]!
   }
 
   type Card {
+  _id: ID
     category: String
     questionText: String
     answerText: String
@@ -21,7 +21,6 @@ const typeDefs = `
   }
 
   input UserInput {
-    username: String!
     email: String!
     password: String!
   }
@@ -33,7 +32,7 @@ const typeDefs = `
 
   type Query {
     users: [User]
-    user(username: String!): User
+    user(email: String!): User
     cards: [Card]!
     card(cardId: ID!): Card
     me: User
