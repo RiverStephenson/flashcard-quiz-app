@@ -1,4 +1,4 @@
-import Thought from './Thought.js';
+import Card from './Flashcard.js';
 import User from './User.js';
 
-export { Thought, User };
+export { Card, User };

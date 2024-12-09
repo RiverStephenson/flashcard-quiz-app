@@ -7,23 +7,18 @@ const typeDefs = `
     thoughts: [Thought]!
   }
 
-  type Thought {
-    _id: ID
-    thoughtText: String
-    thoughtAuthor: String
-    createdAt: String
-    comments: [Comment]!
+  type Card {
+  category: String;
+  questionText: String;
+  answerText: String;
+  createdAt: Date;
   }
 
-  type Comment {
-    _id: ID
-    commentText: String
-    createdAt: String
-  }
 
-  input ThoughtInput {
-    thoughtText: String!
-    thoughtAuthor: String!
+  input CardInput {
+   category: String!;
+  questionText: String!;
+  answerText: String!;
   }
 
   input UserInput {
@@ -40,18 +35,16 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
-    thoughts: [Thought]!
-    thought(thoughtId: ID!): Thought
+    card: [Card]!
+    card(cardId: ID!): Card
     me: User
   }
 
   type Mutation {
     addUser(input: UserInput!): Auth
     login(email: String!, password: String!): Auth
-    addThought(input: ThoughtInput!): Thought
-    addComment(thoughtId: ID!, commentText: String!): Thought
-    removeThought(thoughtId: ID!): Thought
-    removeComment(thoughtId: ID!, commentId: ID!): Thought
+    addCard(input: CardInput!): Card
+    removeCard(CardId: ID!): Card
   }
 `;
 
