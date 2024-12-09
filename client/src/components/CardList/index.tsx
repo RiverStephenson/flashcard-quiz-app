@@ -1,4 +1,6 @@
-import type React from 'react';
+import React, { useState, useRef } from 'react'
+import './index.css'
+// import React, { useEffect, useState, FC } from 'react'
 
 interface Card {
     _id: string;
@@ -12,6 +14,11 @@ interface CardListProps {
 }
 
 const CardList: React.FC<CardListProps> = ({ cards }) => {
+  const [flip, setFlip] = useState(false)
+
+  const frontEl = useRef<HTMLDivElement>(null)
+  const backEl = useRef<HTMLDivElement>(null)
+
     if (!cards.length) {
         return <h3> No Cards Yet </h3>
     }
@@ -20,13 +27,24 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
 return (
     <div>
       {cards?.map((card) => (
-          <div key={card._id} className="card mb-3">
-            <h4 >
+          <div key={card._id} 
+          className={`card ${flip ? 'flip' : ''}`}
+          onClick={() => setFlip(!flip)}
+          >
+            <h1>QUESTION</h1>
+            <h3  
+            className= "question"
+            ref= {frontEl}
+            >
               {card.questionText} <br />
-            </h4>
-            <div>
-              <p>{card.answerText}</p>
-            </div>
+            </h3>
+            <h1>ANSWER</h1>
+            <h3 
+            className= "answer"
+            ref= {backEl}
+            >
+              {card.answerText}
+            </h3>
           </div>
         ))}
     </div>
