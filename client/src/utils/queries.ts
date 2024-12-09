@@ -17,7 +17,6 @@ export const QUERY_CARDS = gql`
 export const QUERY_SINGLE_CARD = gql`
   query getSingleCard($cardId: ID!) {
     card(cardId: $cardId) {
-        category
         questionText
         answerText
     }

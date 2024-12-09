@@ -1,0 +1,20 @@
+.singleCard {
+    height: 400px;
+    width: 400px;
+    border: 2px solid black;
+}
+
+.card .flip {
+    --rotate-y: 180deg;
+}
+
+.card .question,
+  .card .answer {
+    position: absolute;
+    padding: 1rem;
+    backface-visibility: hidden;
+  }
+
+  .card .answer {
+    transform: rotateY(180deg);
+  }
