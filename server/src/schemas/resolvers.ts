@@ -4,7 +4,6 @@ import { signToken, AuthenticationError } from '../utils/auth.js';
 // Define types for the arguments
 interface AddUserArgs {
   input:{
-    username: string;
     email: string;
     password: string;
   }
@@ -16,7 +15,7 @@ interface LoginUserArgs {
 }
 
 interface UserArgs {
-  username: string;
+  email: string;
 }
 
 interface CardArgs {
@@ -36,8 +35,8 @@ const resolvers = {
     users: async () => {
       return User.find();
     },
-    user: async (_parent: any, { username }: UserArgs) => {
-      return User.findOne({ username });
+    user: async (_parent: any, { email }: UserArgs) => {
+      return User.findOne({ email });
     },
     thoughts: async () => {
       return await Card.find().sort({ createdAt: -1 });
@@ -62,7 +61,7 @@ const resolvers = {
       const user = await User.create({ ...input });
     
       // Sign a token with the user's information
-      const token = signToken(user.username, user.email, user._id);
+      const token = signToken(user.email, user._id);
     
       // Return the token and the user
       return { token, user };
@@ -86,7 +85,7 @@ const resolvers = {
       }
     
       // Sign a token with the user's information
-      const token = signToken(user.username, user.email, user._id);
+      const token = signToken(user.email, user._id);
     
       // Return the token and the user
       return { token, user };

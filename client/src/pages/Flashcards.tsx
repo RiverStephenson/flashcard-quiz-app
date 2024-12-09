@@ -1,5 +1,6 @@
 import NavBar from "../components/NavBar";
 
+
 const Flashcards = () => {
     return (
         <div>
