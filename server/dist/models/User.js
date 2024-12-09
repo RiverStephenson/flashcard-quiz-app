@@ -2,12 +2,6 @@ import { Schema, model } from 'mongoose';
 import bcrypt from 'bcrypt';
 // Define the schema for the User document
 const userSchema = new Schema({
-    username: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-    },
     email: {
         type: String,
         required: true,
@@ -19,12 +13,6 @@ const userSchema = new Schema({
         required: true,
         minlength: 5,
     },
-    thoughts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Thought',
-        },
-    ],
 }, {
     timestamps: true,
     toJSON: { getters: true },

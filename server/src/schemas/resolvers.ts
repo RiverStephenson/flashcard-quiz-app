@@ -4,7 +4,6 @@ import { signToken, AuthenticationError } from '../utils/auth.js';
 // Define types for the arguments
 interface AddUserArgs {
   input:{
-    username: string;
     email: string;
     password: string;
   }
@@ -16,7 +15,7 @@ interface LoginUserArgs {
 }
 
 interface UserArgs {
-  username: string;
+  email: string;
 }
 
 interface CardArgs {
@@ -36,13 +35,13 @@ const resolvers = {
     users: async () => {
       return User.find();
     },
-    user: async (_parent: any, { username }: UserArgs) => {
-      return User.findOne({ username });
+    user: async (_parent: any, { email }: UserArgs) => {
+      return User.findOne({ email });
     },
-    thoughts: async () => {
+    cards: async () => {
       return await Card.find().sort({ createdAt: -1 });
     },
-    thought: async (_parent: any, { cardId }: CardArgs) => {
+    card: async (_parent: any, { cardId }: CardArgs) => {
       return await Card.findOne({ _id: cardId });
     },
     // Query to get the authenticated user's information
@@ -62,7 +61,7 @@ const resolvers = {
       const user = await User.create({ ...input });
     
       // Sign a token with the user's information
-      const token = signToken(user.username, user.email, user._id);
+      const token = signToken(user.email, user._id);
     
       // Return the token and the user
       return { token, user };
@@ -86,26 +85,26 @@ const resolvers = {
       }
     
       // Sign a token with the user's information
-      const token = signToken(user.username, user.email, user._id);
+      const token = signToken(user.email, user._id);
     
       // Return the token and the user
       return { token, user };
     },
     addCard: async (_parent: any, { input }: AddCardArgs, context: any) => {
       if (context.user) {
-        const thought = await Card.create({ ...input });
+        const card = await Card.create({ ...input });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { thoughts: thought._id } }
+          { $addToSet: { cards: card._id } }
         );
 
-        return thought;
+        return card;
       }
       throw AuthenticationError;
       ('You need to be logged in!');
     },
-    removeThought: async (_parent: unknown, { cardId }: CardArgs) => {
+    removeCard: async (_parent: unknown, { cardId }: CardArgs) => {
       return await Card.findOneAndDelete({ _id: cardId });
     },
   },

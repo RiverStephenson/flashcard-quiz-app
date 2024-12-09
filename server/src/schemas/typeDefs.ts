@@ -4,21 +4,20 @@ const typeDefs = `
     username: String
     email: String
     password: String
-    thoughts: [Thought]!
+    cards: [Card]!
   }
 
   type Card {
-  category: String;
-  questionText: String;
-  answerText: String;
-  createdAt: Date;
+    category: String
+    questionText: String
+    answerText: String
   }
 
 
   input CardInput {
-   category: String!;
-  questionText: String!;
-  answerText: String!;
+    category: String!
+    questionText: String!
+    answerText: String!
   }
 
   input UserInput {
@@ -35,7 +34,7 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
-    card: [Card]!
+    cards: [Card]!
     card(cardId: ID!): Card
     me: User
   }
