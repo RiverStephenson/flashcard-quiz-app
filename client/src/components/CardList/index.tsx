@@ -28,7 +28,7 @@ return (
     <div>
       {cards?.map((card) => (
           <div key={card._id} 
-          className={`singleCard ${flip ? 'flip' : ''}`}
+          className={`card ${flip ? 'flip' : ''}`}
           onClick={() => setFlip(!flip)}
           >
             <h1>QUESTION</h1>
@@ -43,7 +43,7 @@ return (
             className= "answer"
             ref= {backEl}
             >
-              <p>{card.answerText}</p>
+              {card.answerText}
             </h3>
           </div>
         ))}

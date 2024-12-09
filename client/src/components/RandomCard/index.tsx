@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CARDS } from "../../utils/queries";
+import './index.css'
 
 interface Card {
   _id: string;
@@ -12,6 +13,11 @@ interface Card {
 const RandomCard: React.FC = () => {
   const { loading, error, data } = useQuery(QUERY_CARDS);
   const [currentCard, setCurrentCard] = useState<Card | null>(null);
+
+  const [flip, setFlip] = useState(false)
+
+  const frontEl = useRef<HTMLDivElement>(null)
+  const backEl = useRef<HTMLDivElement>(null)
 
   // Select a random card when cards are available
   const generateRandomCard = () => {
@@ -32,19 +38,35 @@ if (loading) return <p>Loading...</p>;
 if (error) return <p>Error: {error.message}</p>;
 
 return (
-  <div>
+  <main className= "main">
+  <div
+  className={`randomCard ${flip ? 'flip' : ''}`}
+  onClick={() => setFlip(!flip)}
+  >
   {currentCard ? (
     <div>
+      <div >
       <h1>QUESTION</h1>
-      <h3>{currentCard.questionText}</h3>
+      <h3
+      className= "question"
+      ref= {frontEl}
+      >{currentCard.questionText}</h3>
+      </div>
+
+      <div>
       <h1>ANSWER</h1>
-      <h3>{currentCard.answerText}</h3>
+      <h3
+      className= "answer"
+      ref= {backEl}
+      >{currentCard.answerText}</h3>
+      </div>
     </div>
   ) : (
     <p>No cards available</p>
   )}
-  <button onClick={generateRandomCard}>Next</button>
 </div>
+<button onClick={generateRandomCard}>Next</button>
+</main>
 );
 };
 
