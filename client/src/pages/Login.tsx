@@ -1,47 +1,47 @@
-import { useState, FormEvent, ChangeEvent } from "react";
-import './login.css'
-import Auth from "../utils/auth"; // Import the Auth utility for managing authentication state
-import { login } from "../api/authAPI"; // Import the login function from the API
-import { UserLogin } from "../interfaces/UserLogin"; // Import the interface for UserLogin
 
+
+  import { useState, type FormEvent, type ChangeEvent } from 'react';
+// import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+
+import Auth from '../utils/auth';
 
 const Login = () => {
-  // State to manage the login form data
-  const [loginData, setLoginData] = useState<UserLogin>({
-    email: "",
-    password: "",
-  });
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN_USER);
 
-  // Handle changes in the input fields
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setLoginData({
-      ...loginData,
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
       [name]: value,
     });
   };
 
-  // Handle form submission for login
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    console.log(formState);
     try {
-      // Call the login API endpoint with loginData
-      
-      const data = await login(loginData);
-      
-      console.log(data)
-      // If login is successful, call Auth.login to store the token in localStorage
-      
-      Auth.login(data.token);
-      console.log('dataToken', data.token)
-      localStorage.setItem('authToken', data.token)
-    } catch (err) {
-      // alert("Failed to login"); // Log any errors that occur during login
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
     }
+
+    setFormState({
+      email: '',
+      password: '',
+    });
+
     window.location.assign('/categories')
   };
+
+  
 
   return (
     
@@ -55,7 +55,7 @@ const Login = () => {
             className="form-input in"
             type="text"
             name="email"
-            value={loginData.email || ""}
+            value={formState.email || ""}
             onChange={handleChange}
           />
         </div>
@@ -66,7 +66,7 @@ const Login = () => {
             className="form-input in"
             type="password"
             name="password"
-            value={loginData.password || ""}
+            value={formState.password || ""}
             onChange={handleChange}
           />
         </div>
@@ -77,6 +77,11 @@ const Login = () => {
           </button>
         </div>
       </form>
+      {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
     </div>
     
   );

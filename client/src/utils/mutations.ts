@@ -13,15 +13,14 @@ export const ADD_CARD = gql `
 `
 
 export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
+mutation Login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    user {
+      email
     }
   }
+}
 `;
 
 export const ADD_USER = gql`
