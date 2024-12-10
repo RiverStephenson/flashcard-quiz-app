@@ -45,49 +45,11 @@ const Login = () => {
   return (
 
 
-    <div className="form-container">
-        <nav> 
+    <main>
+       <nav> 
           <h1>Welcome</h1>
        <Link className='logo' to='/'><p>Q</p></Link>
        </nav>
-      <form className="form login-form" onSubmit={handleSubmit}>
-        {/* Username input field */}
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            className="form-input in"
-            type="text"
-            name="email"
-            value={formState.email || ""}
-            onChange={handleChange}
-          />
-        </div>
-        {/* Password input field */}
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            className="form-input in"
-            type="password"
-            name="password"
-            value={formState.password || ""}
-            onChange={handleChange}
-          />
-        </div>
-        {/* Submit button for the login form */}
-        <div className="form-group btn-div">
-          <button onClick={handleSubmit} className="btn btn-primary" type="submit">
-            Login
-          </button>
-        </div>
-      </form>
-      {error && (
-        <div className="my-3 p-3 bg-danger text-white">
-          {error.message}
-        </div>
-      )}
-    </div>
-
-    <main>
       <div className="addUser">
         <h4>Sign In</h4>
         <form className="userForm" onSubmit={handleSubmit}>
