@@ -2,11 +2,13 @@
 .main {
     display: flex;
     justify-content: center;
-    height: 30vw;
+    height: 35vw;
     
 }
 .randomCard {
-    background-color: red;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: lightblue;
     width: 75%;
     border: 2px solid white;
     border-radius: 6%;
