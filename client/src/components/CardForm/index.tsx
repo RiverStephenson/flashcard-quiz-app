@@ -1,5 +1,6 @@
 import { type ChangeEvent, type FormEvent, useState } from 'react';
 import { useMutation } from '@apollo/client';
+import './index.css'
 
 import { ADD_CARD } from '../../utils/mutations';
 import { QUERY_CARDS } from '../../utils/queries';
@@ -62,10 +63,13 @@ const CardForm = () => {
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
             <form
+            className='form'
         onSubmit={handleFormSubmit}
       >
            <div>
+            <label>Category:</label>
           <textarea
+            className='formBox'
             name="category"
             placeholder="What's the category you want to have?..."
             value={formState.category}
@@ -73,7 +77,9 @@ const CardForm = () => {
           />
         </div>
         <div>
+        <label>Question:</label>
           <textarea
+            className='formBox'
             name="questionText"
             placeholder="Add your question here please..."
             value={formState.questionText}
@@ -81,7 +87,9 @@ const CardForm = () => {
           />
         </div>
         <div >
+        <label>Answer:</label>
           <input
+            className='formBox'
             name="answerText"
             placeholder="Add your answer here please..."
             value={formState.answerText}
@@ -90,7 +98,7 @@ const CardForm = () => {
         </div>
 
         <div>
-          <button>
+          <button className='button'>
             Add Card
           </button>
         </div>
