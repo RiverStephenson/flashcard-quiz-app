@@ -1,7 +1,7 @@
 
 
 import { useState, type FormEvent, type ChangeEvent } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -46,8 +46,11 @@ const Login = () => {
   return (
 
     <div className="form-container">
+        <nav> 
+          <h1>Welcome</h1>
+       <Link className='logo' to='/'><p>Q</p></Link>
+       </nav>
       <form className="form login-form" onSubmit={handleSubmit}>
-        <h1>Welcome</h1>
         {/* Username input field */}
         <div className="form-group">
           <label>Email</label>
