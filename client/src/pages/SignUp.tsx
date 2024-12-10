@@ -82,7 +82,7 @@ const Signup = () => {
             )}
 
             {error && (
-              <div className="error">
+              <div className="error-message">
                 {error.message}
               </div>
             )}
