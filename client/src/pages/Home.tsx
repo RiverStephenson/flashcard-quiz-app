@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const Home = () => {
   
@@ -7,8 +7,8 @@ const Home = () => {
     return(
         <main>
             <h1>Welcome to QwizMe</h1>
-        <button type='button'>Sign Up</button>
-        <button type='button'>Log In</button>
+        <Link to='/signup'>Sign Up</Link>
+        <Link to='/login'>Log In</Link>
         </main>
     );
 };
