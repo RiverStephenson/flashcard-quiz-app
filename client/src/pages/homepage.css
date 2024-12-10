@@ -1,0 +1,38 @@
+.background {
+    display: flex;
+    background-image: url('https://media.istockphoto.com/id/1348235111/photo/innovation-and-new-ideas-lightbulb-concept-with-question-mark.jpg?s=2048x2048&w=is&k=20&c=XF8dzHXnlhCw_YJ9ObENCoe8V0c2qt-BURSCjhJDAvw=');
+    position: relative;
+    height: 100%;
+}
+h1 {
+    color: antiquewhite;
+    position: relative;
+    left: 30px;
+}
+.links {
+    position: relative;
+    top: 230px;
+    color: antiquewhite;
+    border: 1px antiquewhite solid;
+    border-radius: 16px;
+    
+    padding: 5px;
+}
+.intro {
+    position: relative;
+    right: 250px;
+    margin-top: 10%;
+    width: 10%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.paragraph {
+    color: antiquewhite;
+    font-size: 19px;
+    max-height: 60%;
+}
+.linkholder {
+    
+}
