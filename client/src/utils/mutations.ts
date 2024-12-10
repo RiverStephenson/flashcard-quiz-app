@@ -20,11 +20,8 @@ mutation Login($email: String!, $password: String!) {
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($input: UserInput!) {
-  addUser(input: $input) {
-    user {
-      _id
-    }
+mutation AddUser($email: String!, $password: String!) {
+  addUser(email: $email, password: $password) {
     token
   }
 }
