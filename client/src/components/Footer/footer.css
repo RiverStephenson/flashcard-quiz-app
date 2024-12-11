@@ -1,7 +1,15 @@
+
 .container-A {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(252, 152, 252);
+    background-image: linear-gradient(
+        -120deg,
+        rgb(107, 176, 228),
+        rgb(252, 152, 252)
+    );
   }
   .links-a {
     display: flex;
