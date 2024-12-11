@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CARDS } from '../../utils/queries';
 import Card from '../Card/Card';
+import './randomcard.css'
 
 interface Card {
   _id: string;
@@ -24,7 +25,8 @@ const RandomCard: React.FC = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <main>
+    <main className='randoCard'>
+
       {currentCard && (
         <Card
         key={currentCard._id} // Ensure this is unique for each card
@@ -35,7 +37,7 @@ const RandomCard: React.FC = () => {
       )}
       <button onClick={generateRandomCard}>Next</button>
     </main>
-  );
+  )
 };
 
 export default RandomCard;
