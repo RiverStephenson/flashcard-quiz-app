@@ -1,5 +1,5 @@
 
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar/Navbar";
 import QuizMaker from "../components/QuizMaker/quizMaker";
 
 
