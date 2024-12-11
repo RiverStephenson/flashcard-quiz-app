@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
 
 
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
+    // <footer className="w-100 mt-auto bg-secondary p-4">
       <div className="container-A">
         <div className='otherDiv'>
           Made with{' '}
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
         <nav><a className='githubLinks' href='https://github.com/Bluzke'><img src='https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png'></img>Justin Silber</a></nav>
         </div>
       </div>
-    </footer>
+    // </footer>
   );
 };
 

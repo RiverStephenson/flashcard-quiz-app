@@ -45,9 +45,8 @@ const Login = () => {
   return (
 
 
-    <main>
+    <div className='whole'>
        <nav> 
-          <h1>Welcome</h1>
        <Link className='logo' to='/'><p>Q</p></Link>
        </nav>
       <div className="addUser">
@@ -92,7 +91,7 @@ const Login = () => {
               </Link>
             </div>
       </div>
-    </main>
+    </div>
 
 
   );
