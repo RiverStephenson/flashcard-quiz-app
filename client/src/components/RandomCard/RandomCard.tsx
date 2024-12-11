@@ -27,6 +27,7 @@ const RandomCard: React.FC = () => {
     <main>
       {currentCard && (
         <Card
+        key={currentCard._id} // Ensure this is unique for each card
         id={currentCard._id} // Add the id here
         question={currentCard.questionText}
         answer={currentCard.answerText}

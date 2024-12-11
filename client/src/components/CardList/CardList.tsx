@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { DELETE_CARD } from '../../utils/mutations';
 import { QUERY_CARDS } from '../../utils/queries';
 import Card from '../Card/Card';
+import './cardlist.css'
 
 interface CardListProps {
   cards: { _id: string; questionText: string; answerText: string }[];

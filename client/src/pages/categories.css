@@ -1,0 +1,49 @@
+/* styles.css */
+.categories-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .sidebar {
+    grid-column: span 3; /* Takes up 3/12 columns */
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .cards-section {
+    grid-column: span 9; /* Takes up 9/12 columns */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Nested grid for cards */
+    gap: 1rem;
+  }
+  
+  /* Card Styles */
+  .card-list {
+    display: contents; /* Nested grid from the cards-section parent */
+  }
+  
+  .card-list .card {
+    grid-column: span 1; /* Each card takes up 4/12 columns of the nested grid */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .categories-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+  }

@@ -27,17 +27,23 @@ const Card: React.FC<CardProps> = ({ id, question, answer, onDelete }) => {
   }, [question, answer]);
 
   return (
-    <div className="card-container">
+    <div className="card-container" >
       <div
         className={`card ${flip ? 'flip' : ''}`}
         style={{ height }}
         onClick={() => setFlip(!flip)}
       >
         <div className="front" ref={frontEl}>
-          <div className="question">{question}</div>
+          <div className="question">
+            Question:
+            <br />
+            {question}</div>
         </div>
         <div className="back" ref={backEl}>
-          <div className="answer">{answer}</div>
+          <div className="answer">
+            Answer:
+            <br />
+            {answer}</div>
         </div>
       </div>
       {onDelete && (

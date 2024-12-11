@@ -1,19 +1,4 @@
-.card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 300px;
-    height: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    cursor: pointer;
-    margin: 1rem;
-  }
-  
+
   .card.flip {
     transform: rotateY(180deg);
   }

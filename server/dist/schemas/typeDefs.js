@@ -29,12 +29,15 @@ const typeDefs = `
     user: User
   }
 
+
+
   type Query {
     users: [User]
     user(email: String!): User
     cards: [Card!]! # Always returns an array, even if no cards exist
     card(cardId: ID!): Card
     me: User
+    cardsByCategory(category: String!): [Card]
   }
 
   type Mutation {
