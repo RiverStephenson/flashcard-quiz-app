@@ -11,7 +11,7 @@ const Quiz = () => {
             <NavBar />
             <QuizMaker />
 
-            Quiz
+           
         </div>
     );
 };
