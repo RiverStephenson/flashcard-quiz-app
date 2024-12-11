@@ -17,7 +17,8 @@ const Card: React.FC<CardProps> = ({ id, question, answer, onDelete }) => {
   const setMaxHeight = () => {
     const frontHeight = frontEl.current?.getBoundingClientRect().height || 0;
     const backHeight = backEl.current?.getBoundingClientRect().height || 0;
-    setHeight(`${Math.max(frontHeight, backHeight, 100)}px`);
+    const maxHeight = Math.max(frontHeight, backHeight, 100); // Ensure a baseline height
+    setHeight(`${maxHeight}px`);
   };
 
   useEffect(() => {

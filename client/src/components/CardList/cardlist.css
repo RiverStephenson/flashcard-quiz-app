@@ -6,15 +6,15 @@
 }
 
 .card-container {
-  height: 200px;
+  height: auto;
 }
 
 .card {
+  max-height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 100%;
   border-radius: 0.25rem;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
   background-color: white;
@@ -22,7 +22,7 @@
   transition: transform 0.6s ease, box-shadow 0.3s ease;
   cursor: pointer;
   transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
-  margin: 1rem; /* Add spacing between cards */
+  margin: 2rem; /* Add spacing between cards */
 }
 
 .card:hover {
@@ -34,14 +34,14 @@
   --rotate-y: 180deg;
 }
 
-.card .front,
-.card .back {
+.front,
+.back {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: .1rem;
   backface-visibility: hidden;
   display: flex;
   justify-content: center;
@@ -57,21 +57,47 @@
   background-color: #e9ecef
 }
 
-.card button {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: red;
-  color: white;
+.delete-button {
+  margin-top: 20px;
+  margin-left: 170px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #3A3A3A;
+  display: inline-block;
+}
+
+.delete-button::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 0;
+  background: #C4C4F7;
+  transition:all .5s;
+}
+
+.delete-button:hover::after {
+  width: 100%;
+  text-decoration: none;
+}
+
+
+.delete-button {
+  padding: 10px 20px;
+  background-color: #C4C4F7;
+  color: #fff;
+  outline: none;
   border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+.delete-button:hover {
+  background-color: rgb(240, 243, 244);
+  color: #C4C4F7;
+  border: 1px solid #C4C4F7;
 }
 
-.card button:hover {
-  background-color: darkred;
-}
-
-@media screen and (max-width: 376px) {
+/* @media screen and (max-width: 376px) {
   body {
     background-color: hotpink;
     
@@ -95,4 +121,4 @@
     height: 30px!important;
   }
   
-}
+} */
