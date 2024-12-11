@@ -1,9 +1,14 @@
-nav {
+.mainNav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   min-height: 4.5rem;
+  background-image: linear-gradient(
+    -120deg,
+    rgb(107, 176, 228),
+    rgb(252, 152, 252)
+);
 }
 ul {
   list-style: none;
@@ -12,6 +17,7 @@ ul {
 li {
   display: inline;
   margin-right: 5rem;
+  color: antiquewhite
 }
 a, button {
   background: none;
@@ -42,4 +48,7 @@ button:hover, a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
+}
+.navLink {
+  color: black;
 }
