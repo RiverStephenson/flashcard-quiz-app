@@ -1,6 +1,6 @@
 
 import CardList from "../components/CardList/CardList.js";
-
+import NavBar from "../components/NavBar/Navbar.js";
 import { QUERY_CARDS } from "../utils/queries.js";
 import { useQuery } from "@apollo/client";
 
@@ -10,7 +10,7 @@ const Categories = () => {
 
   return (
     <main className="categories-page">
-     
+     <NavBar></NavBar>
 
       <section className="cards-section">
         {loading ? (
