@@ -9,7 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 
 import Footer from './components/Footer/Footer';
-import NavBar from './components/NavBar/Navbar';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
