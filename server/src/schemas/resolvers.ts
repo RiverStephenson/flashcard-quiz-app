@@ -29,6 +29,10 @@ interface AddCardArgs {
   };
 }
 
+interface CardsByCategoryArgs {
+  category: string;
+}
+
 const resolvers = {
   Query: {
     users: async () => {
@@ -49,6 +53,10 @@ const resolvers = {
       }
       throw new AuthenticationError('Could not authenticate user.');
     },
+    cardsByCategory: async (_parent: any, {category}: CardsByCategoryArgs) => {
+      return await Card.find({category})
+    }
+   
   },
   Mutation: {
     addUser: async (_parent: unknown, { input }: AddUserArgs) => {

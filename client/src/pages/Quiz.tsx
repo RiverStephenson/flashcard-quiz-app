@@ -1,9 +1,16 @@
-import NavBar from "../components/NavBar/Navbar";
+
+import NavBar from "../components/NavBar";
+import QuizMaker from "../components/QuizMaker/quizMaker";
+
+
 
 const Quiz = () => {
     return (
         <div>
-            <NavBar></NavBar>
+
+            <NavBar />
+            <QuizMaker />
+
             Quiz
         </div>
     );

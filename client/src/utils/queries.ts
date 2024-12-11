@@ -22,3 +22,15 @@ export const QUERY_SINGLE_CARD = gql`
     }
   }
 `;
+
+// Query to filter the categories on the quiz page
+export const QUERY_CARDS_BY_CATEGORY = gql`
+  query getCardsByCategory($category: String!) {
+    cardsByCategory(category: $category) {
+      _id
+      category
+      questionText
+      answerText
+    }
+  }
+`;
