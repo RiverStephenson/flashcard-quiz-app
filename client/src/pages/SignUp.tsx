@@ -38,7 +38,11 @@ const Signup = () => {
   };
 
   return (
-    <main>
+    // <main>
+     <div className='whole'>
+      <nav className='logoLink'> 
+       <Link className='logo' to='/'><p>Q</p></Link>
+       </nav>
       <div className= "addUser">
         <h4>Sign Up</h4>
       {data ? (
@@ -93,7 +97,8 @@ const Signup = () => {
               </Link>
             </div>
         </div>
-    </main>
+      </div>
+    // </main>
   );
 };
 
