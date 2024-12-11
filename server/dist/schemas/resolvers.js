@@ -20,6 +20,9 @@ const resolvers = {
             }
             throw new AuthenticationError('Could not authenticate user.');
         },
+        cardsByCategory: async (_parent, { category }) => {
+            return await Card.find({ category });
+        }
     },
     Mutation: {
         addUser: async (_parent, { input }) => {

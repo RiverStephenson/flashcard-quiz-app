@@ -16,7 +16,7 @@ const NavBar = () => {
             <li ><Link className='navLink' to="/quiz">Quiz</Link></li>
             <li><Link className='navLink' to="/create-flashcard">Create Flashcard</Link></li>
           </ul>
-          <button className='navLink' onClick={handleLogout}>Logout</button>
+          <button className='navLink button'  onClick={handleLogout}>Logout</button>
         </nav>
       );
     };

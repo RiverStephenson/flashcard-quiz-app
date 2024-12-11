@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_CARD } from '../../utils/mutations';
 import { QUERY_CARDS } from '../../utils/queries';
 import './flashcardform.css'; // Optional styles
+import { Link } from 'react-router-dom';
 
 const FlashcardForm: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -67,8 +68,10 @@ const FlashcardForm: React.FC = () => {
             onChange={handleInputChange}
           />
         </div>
+        {/* <Link to="/categories"> */}
         <button type="submit">Create Flashcard</button>
         {error && <div className="error-message">Error creating flashcard. Try again!</div>}
+        {/* </Link> */}
       </form>
     </div>
   );
