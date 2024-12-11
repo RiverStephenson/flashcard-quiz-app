@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_CARDS_BY_CATEGORY } from '../utils/queries';
+import { QUERY_CARDS_BY_CATEGORY } from '../../utils/queries';
 
 interface Card {
     _id: string;
