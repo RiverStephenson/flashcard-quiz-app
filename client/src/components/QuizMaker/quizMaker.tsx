@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CARDS_BY_CATEGORY } from '../../utils/queries';
+
+// import Categories from '../../pages/Categories';
+
 import './quiz.css'
+
 import { useParams } from 'react-router-dom';
 
 interface Card {
@@ -57,7 +61,10 @@ interface Card {
 
         return (
             <div>
-              {currentCard ? (
+
+              <h1>Quiz: {category}</h1>
+
+               {currentCard ? (
                 <div className='quizSection'>
                   <h2>Question: {currentCard.questionText}</h2>
                   <div className='questions'>
