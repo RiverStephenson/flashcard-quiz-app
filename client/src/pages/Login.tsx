@@ -43,7 +43,13 @@ const Login = () => {
 
 
   return (
+
+
     <main>
+       <nav> 
+          <h1>Welcome</h1>
+       <Link className='logo' to='/'><p>Q</p></Link>
+       </nav>
       <div className="addUser">
         <h4>Sign In</h4>
         <form className="userForm" onSubmit={handleSubmit}>
@@ -87,6 +93,7 @@ const Login = () => {
             </div>
       </div>
     </main>
+
 
   );
 };
