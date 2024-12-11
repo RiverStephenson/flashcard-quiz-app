@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CARDS_BY_CATEGORY } from '../../utils/queries';
+
 // import Categories from '../../pages/Categories';
+
+import './quiz.css'
+
 import { useParams } from 'react-router-dom';
 
 interface Card {
@@ -57,15 +61,17 @@ interface Card {
 
         return (
             <div>
+
               <h1>Quiz: {category}</h1>
-              {currentCard ? (
-                <div>
+
+               {currentCard ? (
+                <div className='quizSection'>
                   <h2>Question: {currentCard.questionText}</h2>
-                  <div>
+                  <div className='questions'>
                     {options.map((option, index) => (
-                      <button key={index} onClick={() => setShowAnswer(true)}>
+                      <button className="button-29" role="button" key={index} onClick={() => setShowAnswer(true)}>
                         {option}
-                      </button>
+                      </button> 
                     ))}
                   </div>
                   {showAnswer && (
@@ -73,7 +79,7 @@ interface Card {
                       Correct Answer: <strong>{currentCard.answerText}</strong>
                     </p>
                   )}
-                  <button onClick={handleNextQuestion}>Next Question</button>
+                  <button className='button' onClick={handleNextQuestion}>Next Question</button>
                 </div>
               ) : (
                 <p>No questions available in this category..</p>
