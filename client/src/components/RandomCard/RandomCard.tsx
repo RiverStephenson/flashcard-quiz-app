@@ -35,7 +35,7 @@ const RandomCard: React.FC = () => {
         answer={currentCard.answerText}
       />
       )}
-      <button onClick={generateRandomCard}>Next</button>
+      <button onClick={generateRandomCard} className='button'>Next</button>
     </main>
   )
 };
