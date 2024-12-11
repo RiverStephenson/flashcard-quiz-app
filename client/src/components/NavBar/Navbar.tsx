@@ -12,7 +12,7 @@ const NavBar = () => {
           <Link className='logo' to='/'><p>Q</p></Link>
           <ul>
             <li ><Link className='navLink' to="/categories">Categories</Link></li>
-            <li ><Link className='navLink' to="/flashcards">Flashcards</Link></li>
+            <li ><Link className='navLink' to="/flashcards/javascript">Flashcards</Link></li>
             <li ><Link className='navLink' to="/quiz/javascript">Quiz</Link></li>
             <li><Link className='navLink' to="/create-flashcard">Create Flashcard</Link></li>
           </ul>
