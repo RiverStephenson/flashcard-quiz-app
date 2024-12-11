@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CARDS_BY_CATEGORY } from '../../utils/queries';
+import Categories from '../../pages/Categories';
+import { useParams } from 'react-router-dom';
 
 interface Card {
     _id: string;
@@ -10,8 +12,11 @@ interface Card {
 
 
   const QuizMaker: React.FC = () => {
+    const { category }  = useParams();
 
-    const { loading, error, data } = useQuery(QUERY_CARDS_BY_CATEGORY);
+    const { loading, error, data } = useQuery(QUERY_CARDS_BY_CATEGORY, 
+      {variables: {category: category}}
+    );
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [options, setOptions] = useState<string[]>([]);
     const [showAnswer, setShowAnswer] = useState(false);
@@ -30,7 +35,7 @@ interface Card {
             .filter((card: Card) => card._id !== cards[currentQuestionIndex]._id)
             .map((card: Card) => card.answerText)
             .sort(() => 0.5 - Math.random())
-            .slice(0, 2);
+            .slice(0, 3);
           const allOptions = [...otherAnswers, correctAnswer].sort(() => 0.5 - Math.random());
           setOptions(allOptions);
         }

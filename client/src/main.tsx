@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         element: <Flashcards />,
       },
       {
-        path: '/quiz',
+        path: '/quiz/:category',
         element: <Quiz />,
       },
       {
