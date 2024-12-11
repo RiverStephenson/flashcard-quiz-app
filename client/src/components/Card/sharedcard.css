@@ -34,4 +34,7 @@
     color: #333;
     text-align: center;
   }
+  .card-container {
+  max-width: 55%;
   
+}
