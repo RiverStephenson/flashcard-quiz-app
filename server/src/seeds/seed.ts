@@ -1,8 +1,9 @@
 import db from '../config/connection.js';
-import  {User} from '../models/index.js';
+import { User, Card } from '../models/index.js';
 import cleanDB from './cleanDB.js';
 
-import userData from './userData.json' assert { type: 'json'};
+import userData from './userData.json' assert { type: 'json' };
+import cardData from './cards.json' assert { type: 'json' };
 
 const seedDatabase = async (): Promise<void> => {
   try {
@@ -10,6 +11,7 @@ const seedDatabase = async (): Promise<void> => {
     await cleanDB();
 
     await User.create(userData);
+    await Card.create(cardData);
     console.log('Seeding completed successfully!');
     process.exit(0);
   } catch (error) {
