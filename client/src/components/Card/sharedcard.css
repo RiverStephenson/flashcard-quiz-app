@@ -61,8 +61,8 @@
   }
   
   .card {
-    min-height: 180px;
-    max-height: 230px;
+    width: 150px;
+    height: 40px;
   }
 
   .card .question,

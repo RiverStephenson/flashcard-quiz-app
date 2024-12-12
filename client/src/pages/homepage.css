@@ -78,3 +78,40 @@ h1 {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(196, 196, 247, 0.3);
 }
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .home-container {
+        padding: 1rem;
+    }
+
+    .content-container {
+        width: 90%;
+        padding: 2rem 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .button-container .button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .content-container {
+        padding: 1.5rem 1rem;
+    }
+}
