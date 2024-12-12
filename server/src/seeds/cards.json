@@ -1,317 +1,127 @@
 [
   {
-    "_id": "6759126119cd654686ff412c",
-    "category": "Typescript",
-    "questionText": "What is the main purpose of the interface keyword in Typescript?",
-    "answerText": "To define a blueprint for an object",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "JavaScript",
+    "questionText": "What is the purpose of the 'use strict' directive in JavaScript?",
+    "answerText": "To enforce stricter parsing and error handling."
   },
   {
-    "_id": "6759126119cd654686ff412d",
-    "category": "Typescript",
-    "questionText": "What is the difference between let and const in Typescript?",
-    "answerText": "let allows reassignment, while const does not",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "JavaScript",
+    "questionText": "What is a closure in JavaScript?",
+    "answerText": "A function that has access to its outer function's scope."
   },
   {
-    "_id": "6759126119cd654686ff412e",
-    "category": "Typescript",
-    "questionText": "What is the purpose of the type keyword in Typescript?",
-    "answerText": "To define a new type alias",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "JavaScript",
+    "questionText": "What is the difference between '==' and '===' in JavaScript?",
+    "answerText": "'==' performs type coercion; '===' does not."
   },
   {
-    "_id": "6759126119cd654686ff412f",
-    "category": "Typescript",
-    "questionText": "What is the difference between == and === in Typescript?",
-    "answerText": "== checks for value equality, while === checks for both value and type equality",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "JavaScript",
+    "questionText": "What does the 'this' keyword refer to in JavaScript?",
+    "answerText": "The object that is executing the current function."
   },
   {
-    "_id": "6759126119cd654686ff4130",
-    "category": "Typescript",
-    "questionText": "What is the purpose of the enum keyword in Typescript?",
-    "answerText": "To define a set of named values",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "JavaScript",
+    "questionText": "How can you create an object in JavaScript?",
+    "answerText": "Using object literals or the Object constructor."
   },
   {
-    "_id": "6759126119cd654686ff4131",
-    "category": "Typescript",
-    "questionText": "What is the difference between null and undefined in Typescript?",
-    "answerText": "null represents the absence of a value, while undefined represents an uninitialized variable",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "TypeScript",
+    "questionText": "What is a type in TypeScript?",
+    "answerText": "A way to define the shape of data, such as string or number."
   },
   {
-    "_id": "6759126119cd654686ff4132",
-    "category": "Typescript",
-    "questionText": "What is the purpose of the class keyword in Typescript?",
-    "answerText": "To define a new class",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "TypeScript",
+    "questionText": "What is the purpose of interfaces in TypeScript?",
+    "answerText": "To define contracts for objects and classes."
   },
   {
-    "_id": "6759126119cd654686ff4133",
-    "category": "Typescript",
-    "questionText": "What is the difference between public and private access modifiers in Typescript?",
-    "answerText": "public members are accessible from anywhere, while private members are only accessible within the same class",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "TypeScript",
+    "questionText": "What is the difference between 'type' and 'interface' in TypeScript?",
+    "answerText": "'type' can define complex types; 'interface' is mainly for objects."
   },
   {
-    "_id": "6759126119cd654686ff4134",
-    "category": "Typescript",
-    "questionText": "What is the purpose of the interface keyword in Typescript?",
-    "answerText": "To define a contract that must be implemented by any class that implements it",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "TypeScript",
+    "questionText": "What is the use of generics in TypeScript?",
+    "answerText": "To create reusable and flexible components."
   },
   {
-    "_id": "6759126119cd654686ff4135",
-    "category": "Typescript",
-    "questionText": "What is the purpose of the type guard in Typescript?",
-    "answerText": "To narrow the type of a value within a specific scope",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "TypeScript",
+    "questionText": "How do you specify optional properties in TypeScript?",
+    "answerText": "By adding a '?' after the property name."
   },
   {
-    "_id": "6759126119cd654686ff4136",
-    "category": "Javascript",
-    "questionText": "What is the difference between var and let in Javascript?",
-    "answerText": "var has function scope, while let has block scope",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "Python",
+    "questionText": "What is Python's primary data structure for key-value pairs?",
+    "answerText": "Dictionaries."
   },
   {
-    "_id": "6759126119cd654686ff4137",
-    "category": "Javascript",
-    "questionText": "What is the purpose of the this keyword in Javascript?",
-    "answerText": "To refer to the current object",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "Python",
+    "questionText": "What does the 'def' keyword do in Python?",
+    "answerText": "Defines a function."
   },
   {
-    "_id": "6759126119cd654686ff4138",
-    "category": "Javascript",
-    "questionText": "What is the difference between == and === in Javascript?",
-    "answerText": "== checks for value equality, while === checks for both value and type equality",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "Python",
+    "questionText": "What is the difference between a list and a tuple in Python?",
+    "answerText": "Lists are mutable; tuples are immutable."
   },
   {
-    "_id": "6759126119cd654686ff4139",
-    "category": "Javascript",
-    "questionText": "What is the purpose of the prototype property in Javascript?",
-    "answerText": "To define the inheritance chain for an object",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "Python",
+    "questionText": "What does the 'with' statement do in Python?",
+    "answerText": "Simplifies resource management, like file handling."
   },
   {
-    "_id": "6759126119cd654686ff413a",
-    "category": "Javascript",
-    "questionText": "What is the difference between null and undefined in Javascript?",
-    "answerText": "null represents the absence of a value, while undefined represents an uninitialized variable",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "Python",
+    "questionText": "How do you handle exceptions in Python?",
+    "answerText": "Using 'try', 'except', and optionally 'finally'."
   },
   {
-    "_id": "6759126119cd654686ff413b",
-    "category": "Javascript",
-    "questionText": "What is the purpose of the async/await syntax in Javascript?",
-    "answerText": "To write asynchronous code that is easier to read and maintain",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "HTML",
+    "questionText": "What does the '<p>' tag represent in HTML?",
+    "answerText": "A paragraph."
   },
   {
-    "_id": "6759126119cd654686ff413c",
-    "category": "Javascript",
-    "questionText": "What is the difference between map and forEach in Javascript?",
-    "answerText": "map returns a new array, while forEach does not return anything",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "category": "HTML",
+    "questionText": "What is the purpose of the '<head>' tag in HTML?",
+    "answerText": "To contain metadata and links to styles/scripts."
   },
   {
-    "_id": "6759126119cd654686ff4154",
+    "category": "HTML",
+    "questionText": "What attribute is used for linking an external stylesheet?",
+    "answerText": "'href' in the '<link>' tag."
+  },
+  {
+    "category": "HTML",
+    "questionText": "What does the '<img>' tag do in HTML?",
+    "answerText": "Embeds an image."
+  },
+  {
+    "category": "HTML",
+    "questionText": "What is the semantic use of the '<nav>' tag?",
+    "answerText": "Defines navigation links."
+  },
+  {
     "category": "MongoDB",
-    "questionText": "What is the purpose of the `db` object in MongoDB?",
-    "answerText": "To interact with the database",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "questionText": "What is a collection in MongoDB?",
+    "answerText": "A group of MongoDB documents, equivalent to a table."
   },
   {
-    "_id": "6759126119cd654686ff4155",
     "category": "MongoDB",
-    "questionText": "What is the difference between `find()` and `findOne()` in MongoDB?",
-    "answerText": "`find()` returns a cursor, while `findOne()` returns a single document",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "questionText": "What command is used to insert a document in MongoDB?",
+    "answerText": "'db.collection.insertOne()'."
   },
   {
-    "_id": "6759126119cd654686ff4156",
     "category": "MongoDB",
-    "questionText": "What is the purpose of the `update()` method in MongoDB?",
-    "answerText": "To update a document in the database",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "questionText": "What does the '_id' field in MongoDB represent?",
+    "answerText": "The unique identifier for a document."
   },
   {
-    "_id": "6759126119cd654686ff4157",
     "category": "MongoDB",
-    "questionText": "What is the difference between `insert()` and `save()` in MongoDB?",
-    "answerText": "`insert()` inserts a new document, while `save()` updates an existing document",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "questionText": "What is the purpose of an index in MongoDB?",
+    "answerText": "To improve the performance of queries."
   },
   {
-    "_id": "6759126119cd654686ff4158",
     "category": "MongoDB",
-    "questionText": "What is the purpose of the `remove()` method in MongoDB?",
-    "answerText": "To remove a document from the database",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff4159",
-    "category": "MongoDB",
-    "questionText": "What is the difference between `db.collection.find()` and `db.collection.findOne()`?",
-    "answerText": "`db.collection.find()` returns a cursor, while `db.collection.findOne()` returns a single document",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff415a",
-    "category": "MongoDB",
-    "questionText": "What is the purpose of the `db.collection.updateMany()` method in MongoDB?",
-    "answerText": "To update multiple documents in the collection",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff415b",
-    "category": "MongoDB",
-    "questionText": "What is the difference between `db.collection.insertOne()` and `db.collection.insertMany()`?",
-    "answerText": "`db.collection.insertOne()` inserts a single document, while `db.collection.insertMany()` inserts multiple documents",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff415c",
-    "category": "HTML",
-    "questionText": "What does HTML stand for?",
-    "answerText": "HyperText Markup Language",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff415d",
-    "category": "HTML",
-    "questionText": "What is the purpose of the <head> tag in HTML?",
-    "answerText": "To contain meta-information about the document",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff415e",
-    "category": "HTML",
-    "questionText": "What is the difference between <div> and <span> in HTML?",
-    "answerText": "<div> is a block-level element, while <span> is an inline element",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff415f",
-    "category": "HTML",
-    "questionText": "What is the purpose of the <a> tag in HTML?",
-    "answerText": "To create a hyperlink",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff4160",
-    "category": "HTML",
-    "questionText": "What is the purpose of the <img> tag in HTML?",
-    "answerText": "To embed an image in the document",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff4161",
-    "category": "HTML",
-    "questionText": "What is the purpose of the <form> tag in HTML?",
-    "answerText": "To create an HTML form for user input",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff4162",
-    "category": "HTML",
-    "questionText": "What is the purpose of the <table> tag in HTML?",
-    "answerText": "To create a table",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff4163",
-    "category": "HTML",
-    "questionText": "What is the purpose of the <ul> tag in HTML?",
-    "answerText": "To create an unordered list",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff4164",
-    "category": "HTML",
-    "questionText": "What is the purpose of the <ol> tag in HTML?",
-    "answerText": "To create an ordered list",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
-  },
-  {
-    "_id": "6759126119cd654686ff4165",
-    "category": "HTML",
-    "questionText": "What is the purpose of the <input> tag in HTML?",
-    "answerText": "To create an input field",
-    "createdAt": "2024-12-11T04:17:37.409+00:00",
-    "updatedAt": "2024-12-11T04:17:37.409+00:00",
-    "__v": 0
+    "questionText": "What is MongoDB's aggregation framework used for?",
+    "answerText": "To process data and return computed results."
   }
 ]
