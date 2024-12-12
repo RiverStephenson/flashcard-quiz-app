@@ -79,46 +79,48 @@ const FlashcardForm: React.FC = () => {
   };
 
   return (
-    <div className="flashcard-form">
-      {successMessage && <div className="success-message">{successMessage}</div>}
-      <form onSubmit={handleFormSubmit}>
-        <div className="form-group">
-          <label htmlFor="category">Category</label>
-          <input
-            id="category"
-            name="category"
-            type="text"
-            placeholder="Enter category"
-            value={formState.category}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="questionText">Question</label>
-          <textarea
-            id="questionText"
-            name="questionText"
-            placeholder="Enter question"
-            value={formState.questionText}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="answerText">Answer</label>
-          <textarea
-            id="answerText"
-            name="answerText"
-            placeholder="Enter answer"
-            value={formState.answerText}
-            onChange={handleInputChange}
-          />
-        </div>
-        {/* <Link to="/categories"> */}
-        <button type="submit">Create Flashcard</button>
-        {error && <div className="error-message">Error creating flashcard. Try again!</div>}
-        {/* </Link> */}
-      </form>
-    </div>
+    <main className='createFlashcard'>
+      <div className="flashcard-form">
+        {successMessage && <div className="success-message">{successMessage}</div>}
+        <form onSubmit={handleFormSubmit}>
+          <div className="form-group">
+            <label htmlFor="category">Category</label>
+            <input
+              id="category"
+              name="category"
+              type="text"
+              placeholder="Enter category"
+              value={formState.category}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="questionText">Question</label>
+            <textarea
+              id="questionText"
+              name="questionText"
+              placeholder="Enter question"
+              value={formState.questionText}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="answerText">Answer</label>
+            <textarea
+              id="answerText"
+              name="answerText"
+              placeholder="Enter answer"
+              value={formState.answerText}
+              onChange={handleInputChange}
+            />
+          </div>
+          {/* <Link to="/categories"> */}
+          <button type="submit" className='button'>Create Flashcard</button>
+          {error && <div className="error-message">Error creating flashcard. Try again!</div>}
+          {/* </Link> */}
+        </form>
+      </div>
+    </main>
   );
 };
 

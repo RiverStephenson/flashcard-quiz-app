@@ -12,7 +12,7 @@ interface Card {
 }
 
 const RandomCard: React.FC = () => {
-const { category } = useParams();
+  const { category } = useParams();
 
   const { loading, error, data } = useQuery(QUERY_CARDS_BY_CATEGORY, 
     {variables: {category: category}}
@@ -30,7 +30,7 @@ const { category } = useParams();
 
   // Generate a random card when data is first loaded
   useEffect(() => {
-    if (data?.cards?.length && !currentCard) {
+    if (data?.cardsByCategory?.length) {
       generateRandomCard();
     }
   }, [data]); // This will run when data changes
@@ -49,9 +49,9 @@ const { category } = useParams();
           answer={currentCard.answerText}
         />
       )}
-      <button onClick={generateRandomCard} className='button'>Next</button>
+      <button onClick={generateRandomCard} className="button">Next Card</button>
     </main>
-  )
+  );
 };
 
 export default RandomCard;
