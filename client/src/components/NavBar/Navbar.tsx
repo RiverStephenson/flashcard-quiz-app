@@ -17,7 +17,7 @@ const NavBar = () => {
           <ul>
 
             <li><Link className='navLink' to="/categories">Categories</Link></li>
-            <li><Link className='navLink' to={`/quiz/${lastCategory}`}>Flashcards</Link></li>
+            <li><Link className='navLink' to={`/flashcards/${lastCategory}`}>Flashcards</Link></li>
             <li><Link className='navLink' to={`/quiz/${lastCategory}`}>Quiz</Link></li>
 
             <li><Link className='navLink' to="/create-flashcard">Create Flashcard</Link></li>
