@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_CARDS } from '../../utils/queries';
+import { QUERY_CARDS_BY_CATEGORY } from '../../utils/queries';
 import Card from '../Card/Card';
 import './randomcard.css'
+import { useParams } from 'react-router-dom';
 
 interface Card {
   _id: string;
@@ -11,13 +12,19 @@ interface Card {
 }
 
 const RandomCard: React.FC = () => {
-  const { loading, error, data } = useQuery<{ cards: Card[] }>(QUERY_CARDS);
+const { category } = useParams();
+
+  const { loading, error, data } = useQuery(QUERY_CARDS_BY_CATEGORY, 
+    {variables: {category: category}}
+  );
   const [currentCard, setCurrentCard] = useState<Card | null>(null);
 
   const generateRandomCard = () => {
-    if (data?.cards?.length) {
-      const randomIndex = Math.floor(Math.random() * data.cards.length);
-      setCurrentCard(data.cards[randomIndex]);
+    if (data?.cardsByCategory?.length) {
+      const randomIndex = Math.floor(Math.random() * data.cardsByCategory.length);
+      setCurrentCard(data.cardsByCategory[randomIndex]);
+    } else if (!data?.cardsByCategory?.length) {
+      console.log('no data')
     }
   };
 
