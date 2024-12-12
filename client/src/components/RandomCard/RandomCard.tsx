@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CARDS } from '../../utils/queries';
 import Card from '../Card/Card';
@@ -21,19 +21,26 @@ const RandomCard: React.FC = () => {
     }
   };
 
+  // Generate a random card when data is first loaded
+  useEffect(() => {
+    if (data?.cards?.length && !currentCard) {
+      generateRandomCard();
+    }
+  }, [data]); // This will run when data changes
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
     <main className='randoCard'>
-
+      <h1>Flashcards</h1>
       {currentCard && (
         <Card
-        key={currentCard._id} // Ensure this is unique for each card
-        id={currentCard._id} // Add the id here
-        question={currentCard.questionText}
-        answer={currentCard.answerText}
-      />
+          key={currentCard._id}
+          id={currentCard._id}
+          question={currentCard.questionText}
+          answer={currentCard.answerText}
+        />
       )}
       <button onClick={generateRandomCard} className='button'>Next</button>
     </main>

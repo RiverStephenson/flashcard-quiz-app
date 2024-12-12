@@ -1,9 +1,24 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { useMutation } from '@apollo/client';
+import { useMutation, ApolloCache } from '@apollo/client';
 import { ADD_CARD } from '../../utils/mutations';
-import { QUERY_CARDS } from '../../utils/queries';
+import { QUERY_CARDS, QUERY_UNIQUE_CATEGORY } from '../../utils/queries';
 import './flashcardform.css'; // Optional styles
 // import { Link } from 'react-router-dom';
+
+interface Card {
+  _id: string;
+  category: string;
+  questionText: string;
+  answerText: string;
+}
+
+interface CardsData {
+  cards: Card[];
+}
+
+interface UniqueCategoriesData {
+  uniqueCategories: string[];
+}
 
 const FlashcardForm: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -13,7 +28,37 @@ const FlashcardForm: React.FC = () => {
   });
   const [successMessage, setSuccessMessage] = useState('');
   const [addCard, { error }] = useMutation(ADD_CARD, {
-    refetchQueries: [QUERY_CARDS, 'getCards'],
+    update(cache: ApolloCache<any>, { data: { addCard } }) {
+      try {
+        // Update cards list
+        const existingData = cache.readQuery<CardsData>({ 
+          query: QUERY_CARDS 
+        });
+        const existingCards = existingData?.cards || [];
+        cache.writeQuery({
+          query: QUERY_CARDS,
+          data: { 
+            cards: [...existingCards, addCard] 
+          },
+        });
+
+        // Update unique categories
+        const existingCategories = cache.readQuery<UniqueCategoriesData>({
+          query: QUERY_UNIQUE_CATEGORY
+        });
+        const uniqueCategories = existingCategories?.uniqueCategories || [];
+        if (!uniqueCategories.includes(addCard.category)) {
+          cache.writeQuery({
+            query: QUERY_UNIQUE_CATEGORY,
+            data: {
+              uniqueCategories: [...uniqueCategories, addCard.category]
+            }
+          });
+        }
+      } catch (e) {
+        console.error('Error updating cache:', e);
+      }
+    }
   });
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

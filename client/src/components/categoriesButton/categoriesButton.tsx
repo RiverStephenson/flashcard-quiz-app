@@ -21,7 +21,7 @@ const CategoryButton = () => {
 
     return (
         <div className="category-container">
-            <h1 className="category-title">Select a Category:</h1>
+            <h2 className="category-title">Select a Category:</h2>
             <div className="category-grid">
                 {data.uniqueCategories.map((category: string) => (
                     <div key={category} className="category-card">
@@ -31,7 +31,7 @@ const CategoryButton = () => {
                         </h3>
                         <button
                             onClick={() => handleCategoryClick(category)}
-                            className="quiz-button"
+                            className="button"
                         >
                             Take Quiz
                         </button>
