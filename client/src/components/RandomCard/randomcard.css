@@ -144,3 +144,43 @@
     margin-top: 0.5rem;
   }
 }
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .randoCard .card {
+        width: 90%;
+        max-width: 500px;
+        height: 400px;
+    }
+
+    .randoCard .question,
+    .randoCard .answer {
+        font-size: 1.5rem;
+    }
+
+    .randoCard .card .front,
+    .randoCard .card .back {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .randoCard .card {
+        width: 95%;
+        height: 350px;
+    }
+
+    .randoCard .question,
+    .randoCard .answer {
+        font-size: 1.3rem;
+    }
+
+    .h1 {
+        font-size: 1.8rem;
+        margin-left: 1rem;
+    }
+
+    .randoCard .button {
+        width: 130px;
+    }
+}
