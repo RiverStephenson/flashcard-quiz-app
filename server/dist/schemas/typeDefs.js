@@ -13,6 +13,7 @@ const typeDefs = `
     answerText: String!
   }
 
+
   input CardInput {
     category: String!
     questionText: String!
@@ -38,6 +39,7 @@ const typeDefs = `
     card(cardId: ID!): Card
     me: User
     cardsByCategory(category: String!): [Card]
+    uniqueCategories: [String!]!
   }
 
   type Mutation {
