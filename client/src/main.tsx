@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <Categories />,
       },
       {
-        path: '/flashcards',
+        path: '/flashcards/:category',
         element: <Flashcards />,
       },
       {

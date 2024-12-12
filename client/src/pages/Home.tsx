@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import "./homepage.css";
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
           </Link>
         </p>
         </div>
-      
+     
     </main>
   );
 };
