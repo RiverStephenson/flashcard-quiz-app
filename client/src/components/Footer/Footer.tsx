@@ -23,6 +23,7 @@ const Footer: React.FC = () => {
         <div className='links-a'>
         <nav><a className='githubLinks' href='https://github.com/RiverStephenson'><img src='https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png'></img>River Stephenson</a></nav>
         <nav><a className='githubLinks' href='https://github.com/Bluzke'><img src='https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png'></img>Justin Silber</a></nav>
+        <nav><a className='githubLinks' href='https://github.com/ilPacoOG'><img src='https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png'></img>Michael Flemming</a></nav>
         </div>
       </div>
     // </footer>
