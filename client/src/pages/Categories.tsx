@@ -17,9 +17,9 @@ if (error) return <p>Error fetching categories!</p>;
   return (
     <main className="categories-page">
       <NavBar></NavBar>
+      <h1>Categories</h1>
       <div className="categories-grid">
         <aside className="sidebar">
-          <h2>Categories</h2>
           {/* Replace the below list with dynamic category data */}
          <CategoryButton/>
         </aside>

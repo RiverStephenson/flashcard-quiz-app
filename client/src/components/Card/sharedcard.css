@@ -1,40 +1,95 @@
+.card-container {
+  width: 300px;
+  margin: 1rem;
+}
 
-  /* .card.flip {
-    transform: rotateY(180deg);
-  } */
-  
-  /* .card .front,
-  .card .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-  } */
-  
-  .card .front {
-    background-color: #f8f9fa;
+.card {
+  position: relative;
+  min-height: 200px;
+  max-height: 250px;
+  width: 100%;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  overflow-y: auto;
+}
+
+.card .front {
+  background-color: #f8f9fa;
+}
+
+.card .back {
+  background-color: #e9ecef;
+  transform: rotateY(180deg);
+}
+
+.card .question,
+.card .answer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+  .card-container {
+    width: 280px;
   }
   
-  .card .back {
-    background-color: #e9ecef;
-    transform: rotateY(180deg);
+  .card {
+    min-height: 180px;
+    max-height: 230px;
   }
-  
+
   .card .question,
   .card .answer {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
+    font-size: 1.1rem;
   }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
   .card-container {
-  max-width: 55%;
+    width: 260px;
+    margin: 0.5rem;
+  }
   
+  .card {
+    min-height: 160px;
+    max-height: 210px;
+  }
+
+  .card .front,
+  .card .back {
+    padding: 15px;
+  }
+
+  .card .question,
+  .card .answer {
+    font-size: 1rem;
+  }
 }
