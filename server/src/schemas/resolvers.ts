@@ -55,6 +55,10 @@ const resolvers = {
     },
     cardsByCategory: async (_parent: any, {category}: CardsByCategoryArgs) => {
       return await Card.find({category})
+    },
+    uniqueCategories: async () => {
+      const categories = await Card.distinct("category");
+      return categories;
     }
    
   },

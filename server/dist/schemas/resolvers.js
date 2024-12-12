@@ -22,6 +22,10 @@ const resolvers = {
         },
         cardsByCategory: async (_parent, { category }) => {
             return await Card.find({ category });
+        },
+        uniqueCategories: async () => {
+            const categories = await Card.distinct("category");
+            return categories;
         }
     },
     Mutation: {

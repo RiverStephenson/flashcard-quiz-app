@@ -4,10 +4,15 @@ import NavBar from "../components/NavBar/Navbar.js";
 import { QUERY_CARDS } from "../utils/queries.js";
 import { useQuery } from "@apollo/client";
 import './categories.css'
+import CategoryButton from "../components/categoriesButton/categoriesButton.js";
 
 const Categories = () => {
   const { loading, error, data } = useQuery(QUERY_CARDS);
   const cards = data?.cards || [];
+
+
+  if (loading) return <p>Loading categories...</p>;
+if (error) return <p>Error fetching categories!</p>;
 
   return (
     <main className="categories-page">
@@ -16,11 +21,7 @@ const Categories = () => {
         <aside className="sidebar">
           <h2>Categories</h2>
           {/* Replace the below list with dynamic category data */}
-          <ul>
-            <li>Category 1</li>
-            <li>Category 2</li>
-            <li>Category 3</li>
-          </ul>
+         <CategoryButton/>
         </aside>
         <section className="cards-section">
           {loading ? (

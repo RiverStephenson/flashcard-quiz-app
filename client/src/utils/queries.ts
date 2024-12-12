@@ -34,3 +34,9 @@ export const QUERY_CARDS_BY_CATEGORY = gql`
     }
   }
 `;
+
+export const QUERY_UNIQUE_CATEGORY = gql`
+query Query {
+  uniqueCategories
+}
+`;
